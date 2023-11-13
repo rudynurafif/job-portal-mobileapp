@@ -11,13 +11,16 @@ const Popularjobs = () => {
   const router = useRouter();
 
   const { data, isLoading, error } = useFetch('search', {
-    query: 'React developer',
+    query: 'Software engineer',
     num_pages: '1',
   });
 
   const [selectedJob, setSelectedJob] = useState();
 
-  const handleCardPress = () => {};
+  const handleCardPress = (item) => {
+    router.push(`/job-details/${item.job_id}`);
+    setSelectedJob(item.job_id);
+  };
 
   return (
     <View style={styles.container}>
@@ -30,7 +33,7 @@ const Popularjobs = () => {
 
       <View style={styles.cardsContainer}>
         {isLoading ? (
-          <ActivityIndicator size='large' colors={COLORS.primary} />
+          <ActivityIndicator size='large' color={COLORS.primary} />
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
@@ -45,7 +48,7 @@ const Popularjobs = () => {
             )}
             keyExtractor={(item) => item?.job_id}
             horizontal
-            showsHorizontalScrollIndicator={false}
+            // showsHorizontalScrollIndicator={false}
             contentContainerStyle={{ columnGap: SIZES.medium }}
           />
         )}
