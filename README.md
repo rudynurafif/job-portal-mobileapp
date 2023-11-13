@@ -1,4 +1,10 @@
-# Expo Router Example
+# Jobit - Job Portal Mobile App
+
+![Home Page](assets/images/home.jpg)
+![JobDetail Page](assets/images/detail.jpg)
+![JobSearch Page](assets/images/search.jpg)
+
+## Expo Router Example
 
 Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
 
